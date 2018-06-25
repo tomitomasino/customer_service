@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: customerservice-deployment
+  name: customer-service-deployment
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: customerservice
+        app: customer-service
     spec:
       containers:
-      - name: customerservice
+      - name: customer-service
         image: registry.eu-de.bluemix.net/imb_namespace/customerservice:latest
         ports:
         - containerPort: 8080        
@@ -18,12 +18,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: customerservice
+  name: customer-service
   labels:
-    app: customerservice
+    app: customer-service
 spec:
   selector:
-    app: customerservice
+    app: customer-service
   type: NodePort
   ports:
    - protocol: TCP
