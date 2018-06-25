@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: customerservice
+  name: customerservice-deployment
 spec:
   replicas: 1
   template:
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: customerservice
-        image: registry.eu-de.bluemix.net/imb_namespace/microservices:latest
+        image: registry.eu-de.bluemix.net/imb_namespace/customerservice:latest
         ports:
         - containerPort: 8080        
 ---
