@@ -6,6 +6,6 @@ import lombok.Getter;
 @Getter
 public class Customer {
 
-    private String name;
-    private String surname;
+    private String name = "my name";
+    private String surname = "my surname";
 }
